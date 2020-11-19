@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>学術情報センター</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="none">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<style>
+@charset "utf-8";
+
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	color: #666;	/*全体の文字色*/
+	background: #f1f1ef 	/*背景色と壁紙*/
+	margin: 0px;
+	padding: 0px;
+	font: 14px/2 "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";	/*文字サイズ/行間、フォントファミリー*/
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure{
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	border: none;
+	vertical-align: bottom;
+}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #666;	/*リンクテキストの色*/
+	outline: none;
+	text-decoration: none;
+}
+a:hover {
+	color: #2eb6c3;			/*マウスオン時の文字色*/
+	outline: none;
+	text-decoration: none;
+}
+
+/*ヘッダー（サイト名が入ったブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
+header {
+	height: 100px;	/*ブロックの高さ*/
+	width: 970px;	/*ブロックの幅*/
+	position: relative;
+	margin: 0px auto;
+}
+/*ロゴ画像の設定*/
+header #logo {
+	position: absolute;
+	left: 0px;		/*ヘッダーブロックに対して左から0pxの位置に配置*/
+	top: 20px;		/*ヘッダーブロックに対して上から20pxの位置に配置*/
+}
+
+
+
+/*コンテナー（ヘッダー以下を囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	background: #9ECEE6;	/*水玉背景画像*/
+	padding-top: 40px;	/*上に空けるスペース*/
+}
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+#contents {
+	clear: both;
+	margin: 0px auto;
+	width: 930px;		/*コンテンツ幅*/
+	background: #FFF;	/*背景色*/
+	padding: 20px;		/*ボックス内の余白*/
+	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.2);	/*影の設定。それぞれ右へ、下へ、ぼかし幅、色(左3つがRGBの色指定で一番右が透明度)の設定。*/
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.2);			/*同上*/
+	border-radius: 10px;	/*角丸のサイズ*/
+}
+
+/*メインコンテンツ
+---------------------------------------------------------------------------*/
+#main {
+	width: 100%;
+	padding-bottom: 30px;
+}
+/*mainコンテンツのh2タグの設定*/
+#main h2 {
+	clear: both;
+	font-size: 100%;
+	color: #2eb6c3;		/*文字色*/
+	border-bottom: 3px solid #2eb6c3;	/*下線の幅、線種、色の設定*/
+	padding-left: 15px;
+}
+/*mainコンテンツのh3タグの設定*/
+#main h3 {
+	clear: both;
+	background: #FFF;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#dcdcdc));	/*グラデーション*/
+	background: -webkit-linear-gradient(#FFF, #dcdcdc);	/*同上*/
+	background: linear-gradient(#FFF, #dcdcdc);			/*同上*/
+	font-size: 100%;
+	padding: 4px 15px;	/*左から、上下、左右への余白*/
+	border-radius: 30px;		/*角丸のサイズ*/
+	border: 1px solid #ccc;		/*枠線の幅、線種、色*/
+}
+/*mainコンテンツの段落タグ設定*/
+#main p {
+	text-align: center;
+	padding: 0.5em 15px 1em;	/*左から、上、左右、下への余白*/
+}
+
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+
+.clear {
+	clear: both;
+}
+
+
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/*ここからタブレット用（481px～800px）環境の設定
+---------------------------------------------------------------------------*/
+/*表示を切り替えるウィンドウサイズの指定*/
+@media (min-width:481px) and (max-width:800px){
+
+/*コンテナー（HPを囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	width: auto;
+}
+
+/*ヘッダーブロック*/
+header {
+	width: auto;
+	height: auto;
+	position: static;
+	text-align: center;
+
+}
+
+/*ロゴ画像の設定*/
+header #logo {
+	position: static;
+	padding-top: 20px;
+}
+
+
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+#contents {
+	width: auto;
+	margin: 10px;
+}
+
+
+
+}
+/*----タブレット用END----*/
+
+
+/*ここからスマートフォン用（480px以下）環境の設定
+---------------------------------------------------------------------------*/
+/*表示を切り替えるウィンドウサイズの指定*/
+@media (max-width : 480px){
+
+/*コンテナー（HPを囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	width: auto;
+}
+
+/*ヘッダーブロック*/
+header {
+	width: auto;
+	height: auto;
+	position: static;
+	text-align: center;
+
+}
+#top header {
+	height: 100px;
+}
+/*ロゴ画像の設定*/
+header #logo {
+	position: static;
+	padding: 20px 0px 25px;
+}
+
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+#contents {
+	width: auto;
+	margin: 10px;
+}
+
+
+
+
+
+/*ブロック全体の設定*/
+#new dl {
+	height: auto;
+	margin: 5px 5px 0px;
+}
+
+}
+/*----スマートフォン用END----*/
+
+
+</style>
+
+<body id="top">
+
+<header>
+<h1 id="logo"><a href="index2.html" target="_blank" rel="noreferrer"><img src="idpc_35pix.png" alt="京都先端科学大学情報センター画像リンク" width="280" height="35"></a></h1>
+</header>
+
+<div id="container">
+
+<div id="contents">
+
+<div id="main">
+
+<section>
+<h2>各種リンク</h2>
+<p><a href="index2.html" target="_blank"><img src="office365_35pix.png" alt="オフィス365画像リンク" width="280" height="35">
+</a></p>
+<p><a href="index2.html" target="_blank"><img src="portal_bana.png" alt="京学なび画像リンク" width="280" height="35">
+</a></p>
+<p><a href="index2.html" target="_blank" rel="noreferrer"><img src="new_library.png" alt="京都先端科学大学図書館画像リンク" width="280" height="35">
+</a></p>
+<p><a href="http://kidpc.kuas.ac.jp/career.html" target="_blank" rel="noreferrer"><img src="career_search_35pix.png" alt="京都先端科学大学キャリアセンター求人検索画像リンク" width="280" height="35">
+</a></p>
+</section>
+
+</div>
+<!--/main-->
+
+
+</div>
+<!--/contents-->
+
+<footer>
+<small>Copyright&copy; 2019 <a href="http://kidpc.kuas.ac.jp/gakuen.html" target="_blank" rel="noreferrer">京都先端科学大学</a> 学術情報センター　All Rights Reserved.</small>
+
+</footer>
+
+</div>
+<!--/container-->
+
+</body>
+</html>

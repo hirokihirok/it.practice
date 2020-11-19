@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <title>ren.html</title>
+  <link rel="stylesheet"href="test2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<style>
+*{
+  box-sizing: border-box;
+}
+      .area{
+      width: 100%;
+      padding-left:;
+      flex-wrap: wrap;
+      display: flex;
+      position: absolute;
+
+      z-index: 1;
+
+      }
+
+      input[name="tab_name"] {
+        display: none;
+      }
+
+
+      .tab_class {
+        width: 50%;
+        height: 50px;
+        background-color: darkgrey;
+        line-height: 50px;
+        font-size: 25px;
+        text-align: center;
+        display:block;
+        float: left;
+        order: -1;
+
+      }
+
+      input:checked + .tab_class {
+        background-color: cadetblue;
+        color: aliceblue;
+      }
+
+
+      .contents{
+        display: none;
+      }
+
+      input:checked + .tab_class + .contents {
+        display: block;
+        width:100%;
+        height:calc(100vh - 130px);
+        overflow:auto;
+        border-right: 1px solid black;
+      }
+
+      .search-form{
+        margin: 20px;
+
+      }
+
+      #list-j li {
+        background-color: red;
+        height: 30px;
+        width: 30%;
+
+
+      }
+
+      .word{
+        width: 100px;
+        float:left;
+        line-height: 30px;
+      }
+
+
+      .delete{
+        float:right;
+        line-height: 28px;
+        color: #000;
+        background-color: #fff100;
+        border-bottom: 2px solid #ccc100;
+      }
+
+      .delete:hover{
+        margin-top: 1.5px;
+        color: #000;
+        background: #fff20a;
+        border-bottom: 0.5px solid #ccc100;
+      }
+
+
+
+
+
+</style>
+<body>
+  <div class="area">
+
+    <input type="radio" name="tab_name" id="tab1" checked>
+    <label class="tab_class" for="tab1">contents</label>
+    <div class="contents">
+
+      <form class="search-form"method="get" action="cgi.bin/example.cgi">
+        <input type="search" name="search" value="" placeholder="検索キーワードを入力">
+        <input type="submit" name="submit" value="検索">
+      </form>
+
+
+      <form method="post" action="" onsubmit="return func1()" id="form1">
+        日本語<input type="text" id="j-neword" name="j-neword"value=""><br>
+        　英語<input type="text" id="point" value=""><br>
+        <input id="add" type="button"onclick="addition()"value="add" >
+        <div class="button">追加</div>
+      </form>
+
+      <ol id="list-j">
+        <li>
+          <div class="word">(例）好き</div>
+          <div id="1" class="delete">delete</div>
+        </li>
+      </ol>
+
+      <div id="clear">クリア</div>
+      <div id="check">check</div>
+
+      <p>取得した値 <span id="span1"></span></p>
+      <input type="text" value="red" id="text1" maxlength="5">
+      <input type="button" id="button1" value="ボタン" />
+      <input type="button" id="button2" value="クリア" />
+    </div>
+
+    <input type="radio" name="tab_name" id="tab2" >
+    <label class="tab_class" for="tab2">test</label>
+    <div class="contents">
+      <div class="ward">
+      </div>
+
+      <form method="post" action="" onsubmit="return func1()" id="form1">
+        日本語<input type="text" id="name" class="target"value="煌木 太郎"><br>
+        　英語<input type="text" id="point" value="100"><br>
+        <input type="submit" value="送信">
+      </form>
+
+      <div class="text">hahihuheho</div>
+    </div>
+
+  </div>
+
+
+
+
+<script>
+
+$('#add').click(function() {
+  // 値を取得
+  var str1 =  $('input:text[name="j-neword"]').val();
+  $('#list-j').append('<li><div class="word">' + str1 + '</div></li>');
+  $('#list-j li').last().append('<div class="delete">delete</div>');
+});
+
+$('.delete').click(function(){
+  var $parent = $('.delete').parent('li');
+  var i = $parent.index();
+  $('li').eq(i).remove();
+});
+
+
+$('#clear').click(function(){
+  $('li').remove();
+});
+
+$('#check').click(function(){
+  var length = $("li").length;
+  var sum=0;
+  alert(sum);
+});
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
